@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Perpustaaan;
+namespace App\Http\Controllers\Perpustakaan;
 
 use App\Http\Controllers\Controller;
 use App\Models\Perpustakaan\Perpustakaans;
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
-class PerpustaanController extends Controller
+class PerpustakaanController extends Controller
 {
   /**
    * Display a listing of the resource.

@@ -1,16 +1,15 @@
 <?php
 
-use App\Controller\Perpustakaan\Perpustakaans;
-use App\Http\Controllers\Perpustaaan\PerpustaanController;
+use App\Http\Controllers\Perpustakaan\PerpustakaanController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+  Route::view('/dashboard', 'dashboard')->name('dashboard');
+  Route::resource('perpustakaan', PerpustakaanController::class)->names('perpustakaan');
 });
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-    Route::resource('perpustakaan',PerpustaanController::class)->names('perpustakaan');
+Route::fallback(function () {
+  return view('layouts.error');
 });
