@@ -66,7 +66,12 @@ class User extends Authenticatable
         ];
     }
 
-    public function pinjams(): HasMany
+  /**
+   * Get the pinjams for the user.
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\HasMany
+   */
+  public function pinjams(): HasMany
     {
         return $this->hasMany(Perpustakaans::class);
     }

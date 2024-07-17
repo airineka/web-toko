@@ -10,13 +10,24 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Perpustakaans extends Model
 {
     use HasFactory;
-    protected $fillable = [
+
+  /**
+   * The fields that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
         "nama_buku",
         "penerbit",
         "user_id",
     ];
 
-    public function user(): BelongsTo
+  /**
+   * Get the user associated with the model.
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+   */
+  public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
