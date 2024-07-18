@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\Perpustakaan;
+namespace App\Models\Toko;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Perpustakaans extends Model
+class Toko extends Model
 {
     use HasFactory;
 
@@ -17,8 +17,8 @@ class Perpustakaans extends Model
    * @var array
    */
   protected $fillable = [
-        "nama_buku",
-        "penerbit",
+        "nama_toko",
+        "address",
         "user_id",
     ];
 
